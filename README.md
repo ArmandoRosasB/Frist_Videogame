@@ -12,6 +12,6 @@ However, you are not playing with Mario, you will be playing with a
 Frist the fox!!!
 
 <div align = "center">
-<img width = '300px' height = auto alt = 'Fox' src = 'https://art.pixilart.com/ed662b18ec46a15.png'/>
+<img width = '300px' height = auto alt = 'Fox' src = 'SuperFox/Extras/idle.gif'/>
 
 </div>
