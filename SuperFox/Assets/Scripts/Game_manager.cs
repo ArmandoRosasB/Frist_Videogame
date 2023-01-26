@@ -28,8 +28,10 @@ public class Game_manager : MonoBehaviour
         }
 
         //Create enemies
-        enemies.Add(Instantiate(slime, new Vector2(12, -2.7f), Quaternion.identity));
-        enemies.Add(Instantiate(vulture, new Vector2(18, 3), Quaternion.identity));
+        enemies.Add(Instantiate(slime, new Vector2(10, -2.7f), Quaternion.identity));
+        enemies.Add(Instantiate(vulture, new Vector2(12, 1), Quaternion.identity));
+        enemies.Add(Instantiate(slime, new Vector2(6, -2.7f), Quaternion.identity));
+        enemies.Add(Instantiate(vulture, new Vector2(7, 3), Quaternion.identity));
 
     }
 
@@ -67,14 +69,14 @@ public class Game_manager : MonoBehaviour
             //Move enemies
             for(int i = 0; i < enemies.Count; i++){
                 if (enemies[i].transform.position.x <= -10){
-                    float random_enemies = Random.Range(11, 18);
-                    if (i == 0){
-                        enemies[i].transform.position  = new Vector3(random_enemies, -2.7f, 0);
+                    if (i == 0 || i == 2){
+                        enemies[i].transform.position  = new Vector3(10 + (Random.Range(0, 1000) % 9) , -2.7f, 0);
+                        enemies[i].transform.position  = new Vector3(8 + (Random.Range(0, 1000) % 9), -2.7f, 0);
                     }
 
-                    if (i == 1){
-                        float random_height = Random.Range(-1, 4);
-                        enemies[i].transform.position  = new Vector3(random_enemies, random_height, 0);
+                    if (i == 1  || i == 3){
+                        enemies[i].transform.position  = new Vector3(9 + (Random.Range(0, 1000) % 9), -1 + (Random.Range(0, 1000) % 3), 0);
+                        enemies[i].transform.position  = new Vector3(8 + (Random.Range(0, 1000) % 9), -1 + (Random.Range(0, 1000) % 3), 0);
                     }
 
                 }
