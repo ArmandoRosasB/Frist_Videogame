@@ -5,6 +5,7 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     public float jumpingStrength;
+    public Game_manager gameManager;
     
     private int jump_count;
     private Rigidbody2D rigidbody2D;
@@ -43,6 +44,10 @@ public class Player : MonoBehaviour
             animator.SetBool("isJumping", false);
             animator.SetBool("isJumpingHigher", false);
             jump_count = 0;
+        }
+
+        if (collision.gameObject.tag == "Enemy"){
+            gameManager.gameOver = true;
         }
     }
 }
